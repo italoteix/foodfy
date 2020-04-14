@@ -1,0 +1,33 @@
+{% extends 'layout.njk' %}
+
+{% block content %}
+
+  <section class="hero container">
+    <div class="hero-content">
+      <h1>The best recipes</h1>
+      <p>Learn how to build the best dishes with recipes created by professionals from all over the world.</p>
+    </div>
+    <img src="/assets/chef.png" alt="chef">
+  </section>
+
+  <main class="container">
+    <h2>Most accessed</h2>
+
+    <div class="cards">
+
+      {% for recipe in recipes %}
+
+        <div class="card">
+          <img src="{{ recipe.image }}" alt="{{ recipe.title }}">
+          <div class="card-info">
+            <h4>{{ recipe.title }}</h4>
+            <p>by {{ recipe.author}}</p>
+          </div>
+        </div>
+
+      {% endfor %}
+
+    </div>
+  </main>
+
+{% endblock content %}

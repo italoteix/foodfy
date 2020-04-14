@@ -208,3 +208,64 @@ footer small {
   visibility: visible;
   transition: opacity 200ms;
 }
+
+/*=== RECIPE PAGE ===*/
+.banner {
+  margin: 50px 0;
+}
+
+.banner img {
+  border-radius: 15px;
+}
+
+.recipe h1 {
+  font-size: 36px;
+  line-height: 42px;
+  text-align: center;
+}
+
+.recipe p {
+  font-size: 20px;
+  line-height: 24px;
+  color: var(--color-text-secondary);
+  text-align: center;
+  margin-top: 4px;
+}
+
+.recipe .recipe-section {
+  margin: 50px 0;
+}
+
+.recipe .recipe-section h2 {
+  font-size: 24px;
+  line-height: 28px;
+  margin-bottom: 20px;
+}
+
+.recipe .recipe-section h2 span {
+  font-size: 12px;
+  line-height: 14px;
+  color: #999999;
+  text-transform: uppercase;
+  margin-left: 8px;
+  cursor: pointer;
+}
+
+.recipe .recipe-section ul {
+  padding-inline-start: 18px;
+  color: #444444;
+}
+
+.recipe .recipe-section p {
+  font-size: 18px;
+  line-height: 28px;
+  text-align: left;
+  color: #444444;
+  white-space: pre-wrap;
+}
+
+/*=== HIDE BLOCK ===*/
+ul.hide,
+p.hide {
+  display: none;
+}
