@@ -1,19 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Foodfy</title>
-  <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-  <header class="container">
-    <a href="index.html"><img src="assets/logo.png" id="logo" alt="foodfy"></a>
-    <nav>
-      <a href="about.html">About</a>
-      <a href="recipes.html">Recipies</a>
-    </nav>
-  </header>
+{% extends 'layout.njk' %}
+
+{% block head %}
+  <title>About</title>
+{% endblock head %}
+
+{% block content %}
 
   <main>
     <div class="about container">
@@ -57,8 +48,4 @@
     </div>
   </main>
 
-  <footer>
-    <small>All rights reserved, Foodfy's recipes.</small>
-  </footer>
-</body>
-</html>
+{% endblock content %}
