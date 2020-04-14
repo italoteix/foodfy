@@ -50,7 +50,7 @@ The description of this part of challenge can be read [here](https://github.com/
 To see my code at this point of the challenge, go [here](https://github.com/italoteix/foodfy/tree/challenge-3).
 
 <p align="center">
-  <img alt="challenge-3" src="demo/challenge-2.gif" width="600px" />
+  <img alt="challenge-3" src="demo/challenge-3.gif" width="600px" />
 </p>
 
 ## :gear: Installing and Running
