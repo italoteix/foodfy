@@ -1,7 +1,7 @@
 const express = require('express');
 const nunjucks = require('nunjucks');
 
-const recipes = require('./data');
+const routes = require('./routes');
 
 const server = express();
 
@@ -15,26 +15,8 @@ nunjucks.configure('views', {
   autoescape: false
 });
 
-server.get('/', function(req, res) {
-  const featuredRecipes = recipes.slice(0, 6);
-
-  res.render('home', { recipes: featuredRecipes});
-});
-
-server.get('/about', function(req, res) {
-  res.render('about');
-});
-
-server.get('/recipes', function(req, res) {
-  res.render('recipes', { recipes });
-});
-
-server.get('/recipes/:id', function(req, res) {
-  const id = req.params.id;
-
-  res.render('recipe', { recipe: recipes[id] })
-})
+server.use(routes);
 
 server.listen(5000, function() {
-  console.log('Srever running on port 5000!');
+  console.log('Server running on port 5000!');
 });
