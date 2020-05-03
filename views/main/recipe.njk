@@ -11,10 +11,10 @@
       <img src="{{ recipe.image }}" alt="{{ recipe.title }}">
     </div>
     <h1>{{ recipe.title }}</h1>
-    <p>by {{ recipe.author }}</p>
+    <p>por {{ recipe.author }}</p>
 
     <section class="recipe-section">
-      <h2>Ingredients<span class="expand-button" data-js="ingredients">hide</span></h2>
+      <h2>Ingredientes<span class="expand-button" data-js="ingredients">esconder</span></h2>
 
       <ul id="ingredients">
         {% for ingredient in recipe.ingredients %}
@@ -24,7 +24,7 @@
     </section>
 
     <section class="recipe-section">
-      <h2>Directions<span class="expand-button" data-js="directions">hide</span></h2>
+      <h2>Modo de preparo<span class="expand-button" data-js="directions">esconder</span></h2>
 
       <ul id="directions">
         {% for item in recipe.preparation %}
@@ -34,7 +34,7 @@
     </section>
 
     <section class="recipe-section">
-      <h2>Cook's Note<span class="expand-button" data-js="note">hide</span></h2>
+      <h2>Informações adicionais<span class="expand-button" data-js="note">esconder</span></h2>
 
       <p id="note">{{ recipe.information }}</p>
     </section>

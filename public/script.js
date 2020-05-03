@@ -22,7 +22,7 @@ for (let button of expandButtons) {
 
 function changeButtonText(button) {
   if (button.classList.contains('hide')) {
-    button.innerText = 'show';
+    button.innerText = 'mostrar';
   } else {
     button.innerText = 'hide';
   }
