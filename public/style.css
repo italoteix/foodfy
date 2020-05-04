@@ -269,3 +269,15 @@ ul.hide,
 p.hide {
   display: none;
 }
+
+/*=== ADMIN HEADER ===*/
+header.admin {
+  background-color: #111;
+  padding: 26px 32px;
+}
+
+header.admin nav {
+  width: 100%;
+  max-width: 940px;
+  margin: 0 auto;
+}

@@ -1,4 +1,7 @@
-exports.index = function(req, res) {}
+exports.index = function(req, res) {
+  return res.render('admin/index')
+}
+
 exports.create = function(req, res) {}
 exports.show = function(req, res) {}
 exports.edit = function(req, res) {}
