@@ -1,0 +1,44 @@
+{% extends 'layoutAdmin.njk' %}
+
+{% block content %}
+<div class="wrapper recipe admin">
+  <div class="title">
+    <h1>Receita: {{ recipe.name }}</h1>
+    <button class="primary-button" type="button" >
+      <a href="/admin/recipes/{{ recipe.id }}/edit">Editar receita</a>
+    </button>
+  </div>
+
+  <div class="banner">
+    <img src="{{ recipe.avatar_url }}" alt="{{ recipe.name }}">
+  </div>
+  <h1>{{ recipe.name }}</h1>
+  <p>por {{ recipe.author }}</p>
+
+  <section class="recipe-section">
+    <h2>Ingredientes</h2>
+
+    <ul id="ingredients">
+      {% for ingredient in recipe.ingredients %}
+        <li> {{ ingredient }}</li>
+      {% endfor %}
+    </ul>
+  </section>
+
+  <section class="recipe-section">
+    <h2>Modo de preparo</h2>
+
+    <ul id="directions">
+      {% for item in recipe.steps %}
+        <li> {{ item }}</li>
+      {% endfor %}
+    </ul>
+  </section>
+
+  <section class="recipe-section">
+    <h2>Informações adicionais</h2>
+
+    <span id="note">{{ recipe.infos }}</span>
+  </section>
+</div>
+{% endblock content %}

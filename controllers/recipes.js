@@ -10,7 +10,16 @@ exports.create = function(req, res) {
   return res.render('admin/create');
 }
 
-exports.show = function(req, res) {}
+exports.show = function(req, res) {
+  const { id } = req.params;
+  
+  const foundRecipe = data.recipes[id - 1];
+
+  if (!foundRecipe) return res.send('Recipe not found!');
+
+  return res.render('admin/show', { recipe: foundRecipe });
+}
+
 exports.edit = function(req, res) {}
 exports.post = function(req, res) {
   for (let key in req.body) {

@@ -406,3 +406,37 @@ textarea {
   color: #6558C3;
   text-decoration: none;
 }
+
+/*=== ADMIN SHOW ===*/
+.admin.recipe .title {
+  margin-bottom: 20px;
+}
+
+.admin.recipe .primary-button a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+}
+
+.admin .banner {
+  margin-top: 0;
+  width: 100%;
+  overflow: hidden;
+}
+
+.admin .banner img {
+  width: 100%;
+}
+
+.admin.recipe ul {
+  padding-inline-start: 0;
+}
+
+.admin.recipe li {
+  list-style-type: none;
+  line-height: 28px;
+}
+
+.admin.recipe li::before {
+  content: "-";
+}
