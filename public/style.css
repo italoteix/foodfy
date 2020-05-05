@@ -298,19 +298,22 @@ main.admin {
   margin-bottom: 30px;
 }
 
-.form-item h1 {
+.form-item h1,
+.admin .title h1 {
   display: inline-block;
   font-size: 24px;
   line-height: 28px;
 }
 
 .form-item input,
-textarea {
+textarea,
+.admin .primary-button {
   padding: 9px 20px;
   border-radius: 4px;
 }
 
-.form-item input[type="submit"] {
+.form-item input[type="submit"],
+.admin .primary-button {
   background-color: #6558C3;
   cursor: pointer;
 
@@ -327,7 +330,8 @@ textarea {
   margin-bottom: 8px;
 }
 
-.form-item:first-child {
+.form-item:first-child,
+.admin .title {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -344,4 +348,61 @@ textarea {
   margin-top: 15px;
   color: #6558C3;
   cursor: pointer;
+}
+
+/*=== ADMIN INDEX ===*/
+.admin .title {
+  margin-bottom: 30px;
+}
+
+.admin .recipes {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.admin .recipes .recipe {
+  display: grid;
+  grid-template-columns: 43% 57%;
+  gap: 20px;
+}
+
+.recipes .img-wrapper {
+  width: 100%;
+  height: 80px;
+  border-radius: 9px;
+  overflow: hidden;
+}
+
+.recipes .img-wrapper img {
+  height: 100%;
+  object-fit: cover;
+}
+
+.admin .content-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.admin .content-wrapper h3 {
+  font-size: 18px;
+  line-height: 21px;
+  font-weight: normal;
+  margin-bottom: 5px;
+}
+
+.admin .content-wrapper p {
+  font-size: 14px;
+  line-height: 16px;
+  color: var(--color-text-secondary);
+  margin: 0 0 10px;
+}
+
+.admin .content-wrapper a {
+  font-size: 14px;
+  line-height: 16px;
+  font-weight: bold;
+  color: #6558C3;
+  text-decoration: none;
 }
