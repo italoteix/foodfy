@@ -1,0 +1,32 @@
+{% extends 'layoutAdmin.njk' %}
+
+{% block content %}
+  <form class="wrapper" action="/admin/recipes" method="post">
+    <div class="form-item">
+      <h1>Criando receita</h1>
+      <input type="submit" value="Salvar receita">
+    </div>
+
+    <div class="form-item">
+      <label for="avatar_url">Image da receita</label>
+      <input type="url" name="avatar_url" id="avatar_url">
+    </div>
+
+    <div class="form-item">
+      <label for="ingredients">Ingredientes</label>
+      <input type="text" name="ingredients[]" class="ingredient">
+      <span class="add-ingredient">Adicionar novo ingrediente</span>
+    </div>
+
+    <div class="form-item">
+      <label for="steps">Modo de preparo</label>
+      <input type="text" name="steps[]" class="step">
+      <span class="add-step">Adicionar novo passo</span>
+    </div>
+
+    <div class="form-item">
+      <label for="infos">Informações adicionais</label>
+      <textarea name="infos" id="infos" rows="10"></textarea>
+    </div>
+  </form>
+{% endblock content %}

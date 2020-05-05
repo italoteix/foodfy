@@ -10,13 +10,16 @@
 </head>
 <body>
   <header class="admin">
-    <nav>
+    <nav class="wrapper">
       <a href="/"><img src="/assets/logo_white.png" id="logo" alt="foodfy"></a>
     </nav>
   </header>
 
-  {% block content %}
-  {% endblock content %}
+  <main class="admin">
+    {% block content %}
+    {% endblock content %}
+  </main>
 
+  <script src="/script.js"></script>
 </body>
 </html>

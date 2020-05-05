@@ -272,12 +272,76 @@ p.hide {
 
 /*=== ADMIN HEADER ===*/
 header.admin {
-  background-color: #111;
+  background-color: var(--color-text-primary);
   padding: 26px 32px;
 }
 
-header.admin nav {
+/*=== ADMIN BODY ===*/
+main.admin {
+  padding: 32px;
+}
+
+.wrapper {
   width: 100%;
   max-width: 940px;
   margin: 0 auto;
+}
+
+/*=== ADMIN CREATE ===*/
+.form-item {
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 19px;
+}
+
+.form-item + .form-item {
+  margin-bottom: 30px;
+}
+
+.form-item h1 {
+  display: inline-block;
+  font-size: 24px;
+  line-height: 28px;
+}
+
+.form-item input,
+textarea {
+  padding: 9px 20px;
+  border-radius: 4px;
+}
+
+.form-item input[type="submit"] {
+  background-color: #6558C3;
+  cursor: pointer;
+
+  color: #fff;
+}
+
+.form-item input:not([type="submit"]),
+textarea {
+  width: 100%;
+  border: 1px solid #ddd;
+}
+
+.form-item input:not(:last-of-type) {
+  margin-bottom: 8px;
+}
+
+.form-item:first-child {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 26px;
+}
+
+.form-item label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.form-item span {
+  display: inline-block;
+  margin-top: 15px;
+  color: #6558C3;
+  cursor: pointer;
 }
