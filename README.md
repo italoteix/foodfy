@@ -21,6 +21,7 @@
   <a href="#rocket-about-this-repo">About this repo</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#bulb-building-foodfy">Building Foodfy</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#bulb-refactoring-foodfy">Refactoring Foodfy</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#bulb-foodfy's-admin">Foodfy's Admin</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#gear-installing-and-running">Installing and Running</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#memo-license">License</a>
 </p>
@@ -51,6 +52,18 @@ To see my code at this point of the challenge, go [here](https://github.com/ital
 
 <p align="center">
   <img alt="challenge-3" src="demo/challenge-3.gif" width="600px" />
+</p>
+
+## :bulb: Foodfy's Admin
+
+Keep inprooving on server. CRUD server inplemented and rederind internal pages of Foodfy.
+
+The description of this part of challenge can be read [here](https://github.com/Rocketseat/bootcamp-launchbase-desafios-04/blob/master/desafios/04-admin-foodfy.md).
+
+To see my code at this point of the challenge, go [here](https://github.com/italoteix/foodfy/tree/challenge-4).
+
+<p align="center">
+  <img alt="challenge-3" src="demo/challenge-4.gif" width="500px" />
 </p>
 
 ## :gear: Installing and Running
