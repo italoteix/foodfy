@@ -1,0 +1,39 @@
+<div class="form-item">
+  <label for="name">Nome do prato</label>
+  <input type="text" name="name" id="name" value="{{ recipe.name }}">
+</div>
+
+<div class="form-item">
+  <label for="author">Autor</label>
+  <input type="text" name="author" id="author" value="{{ recipe.author }}">
+</div>
+
+<div class="form-item">
+  <label for="avatar_url">Imagem da receita</label>
+  <input type="url" name="avatar_url" id="avatar_url" value="{{ recipe.avatar_url }}">
+</div>
+
+<div class="form-item">
+  <label for="ingredients">Ingredientes</label>
+  {% for ingredient in recipe.ingredients %}
+    <input type="text" name="ingredients[]" class="ingredient" value="{{ recipe.ingredients[loop.index - 1] }}">
+  {% else %}
+    <input type="text" name="ingredients[]" class="ingredient">
+  {% endfor %}
+  <span class="add-ingredient">Adicionar novo ingrediente</span>
+</div>
+
+<div class="form-item">
+  <label for="steps">Modo de preparo</label>
+  {% for step in recipe.steps %}
+    <input type="text" name="steps[]" class="step" value="{{ recipe.steps[loop.index - 1] }}">
+  {% else %}
+    <input type="text" name="steps[]" class="step">
+  {% endfor %}
+  <span class="add-step">Adicionar novo passo</span>
+</div>
+
+<div class="form-item">
+  <label for="infos">Informações adicionais</label>
+  <textarea name="infos" id="infos" rows="10" value="{{ recipe.infos }}"></textarea>
+</div>

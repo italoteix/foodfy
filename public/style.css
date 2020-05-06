@@ -412,7 +412,7 @@ textarea {
   margin-bottom: 20px;
 }
 
-.admin.recipe .primary-button a {
+.admin .primary-button a {
   text-decoration: none;
   color: #fff;
   font-weight: bold;
@@ -439,4 +439,10 @@ textarea {
 
 .admin.recipe li::before {
   content: "-";
+}
+
+/*=== ADMIN EDIT ===*/
+.admin #button-delete {
+  background-color: #DC4747;
+  margin: 0 10px 0 auto;
 }
