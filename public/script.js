@@ -22,8 +22,32 @@ for (let button of expandButtons) {
 
 function changeButtonText(button) {
   if (button.classList.contains('hide')) {
-    button.innerText = 'show';
+    button.innerText = 'mostrar';
   } else {
     button.innerText = 'hide';
   }
 }
+
+// Add input fields on button click
+function addField(clonesClass) {
+  const inputs = document.querySelectorAll(clonesClass);
+  const lastInput = inputs[inputs.length - 1];
+
+  // Do not add a new field if the last one is empty
+  if (lastInput.value == "") return false;
+
+  // Clones the last input field
+  const newField = lastInput.cloneNode(true);
+
+  // Clear the new input
+  newField.value = "";
+  inputs[inputs.length - 1].after(newField);
+}
+
+document
+  .querySelector(".add-ingredient")
+  .addEventListener("click", function() { addField('.ingredient') });
+
+document
+  .querySelector(".add-step")
+  .addEventListener("click", function() { addField('.step') });

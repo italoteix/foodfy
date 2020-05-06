@@ -1,0 +1,13 @@
+{% extends 'layoutAdmin.njk' %}
+
+{% block content %}
+  <form class="wrapper" action="/admin/recipes" method="post">
+    <div class="form-item">
+      <h1>Criando receita</h1>
+      <input type="submit" value="Salvar receita">
+    </div>
+
+    {% include 'admin/fields.njk' %}
+
+  </form>
+{% endblock content %}
