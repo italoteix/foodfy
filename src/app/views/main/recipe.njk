@@ -1,16 +1,16 @@
 {% extends 'layout.njk' %}
 
 {% block head %}
-  <title>{{ recipe.title }}</title>
+  <title>{{ recipe.name }}</title>
 {% endblock head %}
 
 {% block content %}
 
   <main class="container recipe">
     <div class="banner">
-      <img src="{{ recipe.image }}" alt="{{ recipe.title }}">
+      <img src="{{ recipe.avatar_url }}" alt="{{ recipe.name }}">
     </div>
-    <h1>{{ recipe.title }}</h1>
+    <h1>{{ recipe.name }}</h1>
     <p>por {{ recipe.author }}</p>
 
     <section class="recipe-section">
@@ -27,7 +27,7 @@
       <h2>Modo de preparo<span class="expand-button" data-js="directions">esconder</span></h2>
 
       <ul id="directions">
-        {% for item in recipe.preparation %}
+        {% for item in recipe.steps %}
           <li>{{ item }}</li>
         {% endfor %}
       </ul>
@@ -36,7 +36,7 @@
     <section class="recipe-section">
       <h2>Informações adicionais<span class="expand-button" data-js="note">esconder</span></h2>
 
-      <p id="note">{{ recipe.information }}</p>
+      <p id="note">{{ recipe.infos }}</p>
     </section>
   </main>
 

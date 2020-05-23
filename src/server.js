@@ -11,7 +11,7 @@ server.use(express.urlencoded({ extended: true }));
 server.use(methodOverride('_method'));
 server.set('view engine', 'njk');
 
-nunjucks.configure('views', {
+nunjucks.configure('src/app/views', {
   express: server,
   noCache: true,
   autoescape: false

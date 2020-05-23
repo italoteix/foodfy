@@ -12,9 +12,9 @@
       {% for recipe in recipes %}
 
         <div class="card" data-id="{{ loop.index }}">
-          <img src="{{ recipe.image }}" alt="{{ recipe.title }}">
+          <img src="{{ recipe.avatar_url }}" alt="{{ recipe.name }}">
           <div class="card-info">
-            <h4>{{ recipe.title }}</h4>
+            <h4>{{ recipe.name }}</h4>
             <p>by {{ recipe.author}}</p>
           </div>
         </div>
@@ -24,9 +24,9 @@
       {% for recipe in recipes %}
 
         <div class="card" data-id="{{ loop.index }}">
-          <img src="{{ recipe.image }}" alt="{{ recipe.title }}">
+          <img src="{{ recipe.avatar_url }}" alt="{{ recipe.name }}">
           <div class="card-info">
-            <h4>{{ recipe.title }}</h4>
+            <h4>{{ recipe.name }}</h4>
             <p>por {{ recipe.author}}</p>
           </div>
         </div>

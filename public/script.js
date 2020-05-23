@@ -24,7 +24,7 @@ function changeButtonText(button) {
   if (button.classList.contains('hide')) {
     button.innerText = 'mostrar';
   } else {
-    button.innerText = 'hide';
+    button.innerText = 'esconder';
   }
 }
 

@@ -256,7 +256,8 @@ footer small {
   color: #444444;
 }
 
-.recipe .recipe-section p {
+.recipe .recipe-section p,
+.recipe .recipe-section span {
   font-size: 18px;
   line-height: 28px;
   text-align: left;
