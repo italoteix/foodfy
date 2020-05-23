@@ -4,10 +4,10 @@ const data = require('../../../data.json');
 
 module.exports = {
   index(req, res) {
-    return res.render('admin/index', { recipes: data.recipes });
+    return res.render('admin/recipes/index', { recipes: data.recipes });
   },
   create(req, res) {
-    return res.render('admin/create');
+    return res.render('admin/recipes/create');
   },
   show(req, res) {
     const { id } = req.params;
@@ -16,7 +16,7 @@ module.exports = {
   
     if (!foundRecipe) return res.send('Recipe not found!');
   
-    return res.render('admin/show', { recipe: foundRecipe });
+    return res.render('admin/recipes/show', { recipe: foundRecipe });
   },
   edit(req, res) {
     const { id } = req.params;
@@ -25,7 +25,7 @@ module.exports = {
   
     if (!foundRecipe) return res.send('Recipe not found!');
   
-    return res.render('admin/edit', { recipe: foundRecipe });
+    return res.render('admin/recipes/edit', { recipe: foundRecipe });
   },
   post(req, res) {
     for (let key in req.body) {

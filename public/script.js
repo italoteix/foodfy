@@ -1,24 +1,6 @@
+// Acordeon buttons
 const cards = document.querySelectorAll('.card');
 const expandButtons = document.querySelectorAll('.expand-button');
-
-for (let card of cards) {
-  card.addEventListener('click', function() {
-    const id = card.getAttribute('data-id');
-
-    window.location.href = `/recipes/${id - 1}`;
-  })
-}
-
-for (let button of expandButtons) {
-  button.addEventListener('click', function() {
-    const id = button.getAttribute('data-js');
-    button.va
-
-    button.classList.toggle('hide');
-    document.querySelector(`#${id}`).classList.toggle('hide');
-    changeButtonText(button);
-  });
-}
 
 function changeButtonText(button) {
   if (button.classList.contains('hide')) {
@@ -27,6 +9,29 @@ function changeButtonText(button) {
     button.innerText = 'esconder';
   }
 }
+
+function setAcordeonButtons(cards, expandButtons) {
+  for (let card of cards) {
+    card.addEventListener('click', function() {
+      const id = card.getAttribute('data-id');
+  
+      window.location.href = `/recipes/${id - 1}`;
+    })
+  }
+  
+  for (let button of expandButtons) {
+    button.addEventListener('click', function() {
+      const id = button.getAttribute('data-js');
+      button.va
+  
+      button.classList.toggle('hide');
+      document.querySelector(`#${id}`).classList.toggle('hide');
+      changeButtonText(button);
+    });
+  }
+}
+
+if (cards && expandButtons) setAcordeonButtons(cards, expandButtons);
 
 // Add input fields on button click
 function addField(clonesClass) {
@@ -44,10 +49,13 @@ function addField(clonesClass) {
   inputs[inputs.length - 1].after(newField);
 }
 
-document
-  .querySelector(".add-ingredient")
-  .addEventListener("click", function() { addField('.ingredient') });
+if (document.querySelector(".add-ingredient") && document.querySelector(".add-step")) {
+  document
+    .querySelector(".add-ingredient")
+    .addEventListener("click", function() { addField('.ingredient') });
+  
+  document
+    .querySelector(".add-step")
+    .addEventListener("click", function() { addField('.step') });
+}
 
-document
-  .querySelector(".add-step")
-  .addEventListener("click", function() { addField('.step') });
