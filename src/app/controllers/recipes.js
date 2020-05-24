@@ -1,6 +1,3 @@
-const fs = require('fs');
-
-const data = require('../../../data.json');
 const Recipe = require('../models/Recipe');
 
 module.exports = {
@@ -27,12 +24,14 @@ module.exports = {
   },
   edit(req, res) {
     const { id } = req.params;
-    
-    const foundRecipe = data.recipes[id - 1];
-  
-    if (!foundRecipe) return res.send('Recipe not found!');
-  
-    return res.render('admin/recipes/edit', { recipe: foundRecipe });
+
+    Recipe.find(id, function(recipe) {
+      if (!recipe) return res.send('Recipe not found!');
+
+      Recipe.chefsAvailable(function(options) {
+        return res.render('admin/recipes/edit', { recipe, chefOptions: options });
+      });
+    });
   },
   post(req, res) {
     for (let key in req.body) {
@@ -46,46 +45,20 @@ module.exports = {
     });
   },
   put(req, res) {
-    const { id } = req.body;
-  
-    let index = 0;
-    const foundRecipe = data.recipes.find(function(recipe, foundIndex) {
-      if (recipe.id == id) {
-        index = foundIndex;
-        return true;
+    for (let key in req.body) {
+      if (req.body[key] === '' || req.body[key][0] === '') {
+        return res.send('Fill all the fields!');
       }
-    });
-  
-    if (!foundRecipe) return res.send('Recipe not found!');
-  
-    const recipe = {
-      ...foundRecipe,
-      ...req.body,
-      id: Number(id)
-    };
-  
-    data.recipes[index] = recipe;
-  
-    fs.writeFile('data.json', JSON.stringify(data, null, 2), function(err) {
-      if (err) return res.send('Writing error!');
-  
-      return res.redirect(`/admin/recipes/${id}`);
+    }
+
+    Recipe.update(req.body, function() {
+      return res.redirect(`/admin/recipes/${req.body.id}`);
     });
   },
   delete(req, res) {
     const { id } = req.body;
-    
-    const filteredRecipes = data.recipes.filter(function(recipe) {
-      return recipe.id != id;
-    });
-  
-    if (!filteredRecipes) return res.send('Recipe not found!');
-  
-    data.recipes = filteredRecipes;
-  
-    fs.writeFile('data.json', JSON.stringify(data, null, 2), function(err) {
-      if (err) return res.send('Writing error!');
-  
+
+    Recipe.delete(id, function() {
       return res.redirect('/admin/recipes');
     });
   }

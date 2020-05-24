@@ -6,9 +6,11 @@
 <div class="form-item">
   <label for="chef_id">Chef</label>
   <select name="chef_id" id="chef_id" required>
-    <option value="" selected disabled hidden>Selecione um chef</option>
+    {% if recipe.chef_id %}
+      <option value="" selected disabled hidden>Selecione um chef</option>
+    {% endif %}
     {% for chef in chefOptions %}
-      <option value={{chef.id}}>{{ chef.name }}</option>
+      <option value={{chef.id}} {% if chef.id == recipe.chef_id %}selected{% endif %}>{{ chef.name }}</option>
     {% endfor %}
   </select>
 </div>
@@ -40,5 +42,5 @@
 
 <div class="form-item">
   <label for="information">Informações adicionais</label>
-  <textarea name="information" id="information" rows="10" value="{{ recipe.information }}"></textarea>
+  <textarea name="information" id="information" rows="10" >{{ recipe.information }}</textarea>
 </div>
