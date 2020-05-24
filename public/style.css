@@ -277,6 +277,24 @@ header.admin {
   padding: 26px 32px;
 }
 
+header.admin nav.wrapper {
+  display: grid;
+  grid-template: 1fr / 140px 70px 70px;
+  gap: 30px;
+  align-items: center;
+}
+
+header.admin nav.wrapper .link__header {
+  color: #999;
+  font-size: 15px;
+  line-height: 18px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+header.admin nav.wrapper .link__header.active {
+  color: #fff;
+}
 /*=== ADMIN BODY ===*/
 main.admin {
   padding: 32px;

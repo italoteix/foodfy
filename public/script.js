@@ -59,3 +59,17 @@ if (document.querySelector(".add-ingredient") && document.querySelector(".add-st
     .addEventListener("click", function() { addField('.step') });
 }
 
+// Style current header link
+const $navLinks = document.querySelectorAll('.link__header');
+
+function styleActiveNav($navLinks) {
+  const path = location.pathname;
+
+  for (let $link of $navLinks) {
+    if (path.includes($link.getAttribute('href'))) {
+      $link.classList.add('active');
+    }
+  }
+}
+
+if ($navLinks) styleActiveNav($navLinks);
