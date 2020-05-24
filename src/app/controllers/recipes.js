@@ -20,6 +20,8 @@ module.exports = {
     Recipe.find(id, function(recipe) {
       if (!recipe) return res.send('Recipe not found!');
 
+      recipe.information = recipe.information.replace(/\\n/gi, '<br>')
+
       return res.render('admin/recipes/show', { recipe });
     });
   },
