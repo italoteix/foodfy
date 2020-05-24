@@ -1,13 +1,18 @@
 const fs = require('fs');
 
 const data = require('../../../data.json');
+const Recipe = require('../models/Recipe');
 
 module.exports = {
   index(req, res) {
-    return res.render('admin/recipes/index', { recipes: data.recipes });
+    Recipe.all(function(recipes) {
+      return res.render('admin/recipes/index', { recipes });
+    });
   },
   create(req, res) {
-    return res.render('admin/recipes/create');
+    Recipe.chefsAvailable(function(options) {
+      return res.render('admin/recipes/create', { chefOptions: options });
+    });
   },
   show(req, res) {
     const { id } = req.params;
@@ -34,22 +39,9 @@ module.exports = {
       }
     }
   
-    let id = 1;
-    const lastRecipe = data.recipes[data.recipes.length - 1];
-    if (lastRecipe) {
-      id = lastRecipe.id + 1;
-    }
-  
-    data.recipes.push({
-      id,
-      ...req.body
+    Recipe.create(req.body, function(recipe) {
+      return res.redirect(`/admin/recipes/${recipe.id}`);
     });
-  
-    fs.writeFile('data.json', JSON.stringify(data, null, 2), function(err) {
-      if (err) return res.send('Writhing error!');
-    });
-  
-    return res.redirect('/admin/recipes');
   },
   put(req, res) {
     const { id } = req.body;

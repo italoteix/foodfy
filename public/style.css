@@ -326,6 +326,7 @@ main.admin {
 
 .form-item input,
 textarea,
+.form-item select,
 .admin .primary-button {
   padding: 9px 20px;
   border-radius: 4px;
@@ -340,9 +341,14 @@ textarea,
 }
 
 .form-item input:not([type="submit"]),
+.form-item select,
 textarea {
   width: 100%;
   border: 1px solid #ddd;
+}
+
+.form-item select:invalid {
+  color: #999;
 }
 
 .form-item input:not(:last-of-type) {
