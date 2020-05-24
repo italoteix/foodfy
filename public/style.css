@@ -465,3 +465,45 @@ textarea {
   background-color: #DC4747;
   margin: 0 10px 0 auto;
 }
+
+/*=== CHEFS INDEX ===*/
+.admin .chefs {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 30px;
+}
+
+.admin .chefs .chef {
+  display: grid;
+  grid-template-columns: 64px 1fr;
+  grid-template-rows: 32px 32px;
+  column-gap: 20px;
+  align-items: center;
+}
+
+.admin .chefs img {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  object-fit: cover;
+
+  grid-column: 1;
+  grid-row: 1 / 3;
+}
+
+.admin .chefs .chef p {
+  font-size: 18px;
+  line-height: 19px;
+}
+
+.admin .chefs .chef a {
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 16px;
+  color: #6558C3;
+  text-decoration: none;
+}
+
+.admin .chefs .chef a:hover {
+  filter: brightness(0.7);
+}

@@ -1,7 +1,13 @@
 const db = require('../../config/db');
 
 module.exports = {
-  all(callback) {},
+  all(callback) {
+    db.query('SELECT * FROM chefs', function(err, results) {
+      if (err) throw `Database error! ${err}`;
+
+      callback(results.rows);
+    });
+  },
   create(data, callback) {
     const query = `
       INSERT INTO chefs (
@@ -14,7 +20,7 @@ module.exports = {
     db.query(query, [data.name, data.avatar_url], function(err, results) {
       if (err) throw `Database error! ${err}`;
 
-      callback(results.rows[0])
+      callback(results.rows[0]);
     })
   }
 };
