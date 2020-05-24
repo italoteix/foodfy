@@ -1,7 +1,7 @@
 module.exports = {
   index(req, res) {},
   create(req, res) {
-    return res.render();
+    return res.render('admin/chefs/create');
   },
   show(req, res) {},
   edit(req, res) {},
