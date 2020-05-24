@@ -36,6 +36,20 @@ module.exports = {
       callback(results.rows[0]);
     });
   },
+  find(id, callback) {
+    db.query(
+      `
+        SELECT recipes.*, chefs.name AS chef_name
+        FROM recipes
+        LEFT JOIN chefs ON (recipes.chef_id = chefs.id)
+        WHERE recipes.id = $1
+      `, [id], function(err, results) {
+        if (err) throw `Database error! ${err}`;
+
+        callback(results.rows[0]);
+      }
+    );
+  },
   chefsAvailable(callback) {
     db.query('SELECT id, name FROM chefs', function(err, results) {
       if (err) throw `Database error! ${err}`;

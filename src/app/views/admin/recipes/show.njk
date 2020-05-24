@@ -3,17 +3,17 @@
 {% block content %}
 <div class="wrapper recipe admin">
   <div class="title">
-    <h1>Receita: {{ recipe.name }}</h1>
+    <h1>Receita: {{ recipe.title }}</h1>
     <button class="primary-button" type="button" >
       <a href="/admin/recipes/{{ recipe.id }}/edit">Editar receita</a>
     </button>
   </div>
 
   <div class="banner">
-    <img src="{{ recipe.avatar_url }}" alt="{{ recipe.name }}">
+    <img src="{{ recipe.image }}" alt="{{ recipe.title }}">
   </div>
-  <h1>{{ recipe.name }}</h1>
-  <p>por {{ recipe.author }}</p>
+  <h1>{{ recipe.title }}</h1>
+  <p>por {{ recipe.chef_name }}</p>
 
   <section class="recipe-section">
     <h2>Ingredientes</h2>
@@ -29,7 +29,7 @@
     <h2>Modo de preparo</h2>
 
     <ul id="directions">
-      {% for item in recipe.steps %}
+      {% for item in recipe.preparation %}
         <li> {{ item }}</li>
       {% endfor %}
     </ul>
@@ -38,7 +38,7 @@
   <section class="recipe-section">
     <h2>Informações adicionais</h2>
 
-    <span id="note">{{ recipe.infos }}</span>
+    <p id="note">{{ recipe.information }}</p>
   </section>
 </div>
 {% endblock content %}

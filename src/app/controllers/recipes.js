@@ -16,12 +16,12 @@ module.exports = {
   },
   show(req, res) {
     const { id } = req.params;
-    
-    const foundRecipe = data.recipes[id - 1];
-  
-    if (!foundRecipe) return res.send('Recipe not found!');
-  
-    return res.render('admin/recipes/show', { recipe: foundRecipe });
+
+    Recipe.find(id, function(recipe) {
+      if (!recipe) return res.send('Recipe not found!');
+
+      return res.render('admin/recipes/show', { recipe });
+    });
   },
   edit(req, res) {
     const { id } = req.params;
