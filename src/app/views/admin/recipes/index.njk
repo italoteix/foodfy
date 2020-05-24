@@ -13,12 +13,12 @@
       {% for recipe in recipes %}
         <div class="recipe">
           <div class="img-wrapper">
-            <img src="{{ recipe.avatar_url }}" alt="{{ recipe.name }}">
+            <img src="{{ recipe.image }}" alt="{{ recipe.title }}">
           </div>
           <div class="content-wrapper">
-            <h3>{{ recipe.name }}</h3>
-            <p>por {{ recipe.author }}</p>
-            <a href="/admin/recipes/{{ loop.index }}">Visualizar</a>
+            <h3>{{ recipe.title }}</h3>
+            <p>por {{ recipe.chef_name }}</p>
+            <a href="/admin/recipes/{{ recipe.id }}">Visualizar</a>
           </div>
         </div>
       {% endfor %}
