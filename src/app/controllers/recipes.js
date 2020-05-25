@@ -35,7 +35,7 @@ module.exports = {
   },
   post(req, res) {
     for (let key in req.body) {
-      if (req.body[key] === '' || req.body[key][0] === '') {
+      if (key !== 'information' && req.body[key] === '' || req.body[key][0] === '') {
         return res.send('Fill all the fields!');
       }
     }

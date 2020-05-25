@@ -317,7 +317,8 @@ main.admin {
 }
 
 .form-item h1,
-.admin .title h1 {
+.admin .title h1,
+.admin section > h3 {
   display: inline-block;
   font-size: 24px;
   line-height: 28px;
@@ -511,4 +512,28 @@ textarea {
 
 .admin .chefs .chef a:hover {
   filter: brightness(0.7);
+}
+
+/*=== CHEFS SHOW ===*/
+.chef__header {
+  text-align: center;
+  margin: 50px 0;
+}
+.chef__header img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 30px;
+}
+
+.chef__header h2 {
+  font-size: 36px;
+  line-height: 42px;
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+
+.admin section > h3 {
+  margin-bottom: 30px;
 }

@@ -6,7 +6,7 @@
 <div class="form-item">
   <label for="chef_id">Chef</label>
   <select name="chef_id" id="chef_id" required>
-    {% if recipe.chef_id %}
+    {% if not recipe.chef_id %}
       <option value="" selected disabled hidden>Selecione um chef</option>
     {% endif %}
     {% for chef in chefOptions %}
