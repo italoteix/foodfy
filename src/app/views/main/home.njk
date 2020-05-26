@@ -1,4 +1,4 @@
-{% extends 'main/layout.njk' %}
+{% extends '_layouts/main.njk' %}
 
 {% block content %}
 
@@ -13,14 +13,14 @@
   <section class="container">
     <h2 class="title">Mais acessadas</h2>
 
-    <div class="recipes-grid">
+    <div class="grid grid--recipes">
 
       {% for recipe in recipes %}
-        <a href="/recipes/{{ recipe.id }}" class="recipes-grid__item">
-          <div class="recipes-grid__image">
+        <a href="/recipes/{{ recipe.id }}" class="grid__item--recipes">
+          <div class="grid__image--recipes">
             <img src="{{ recipe.image }}" alt="{{ recipe.title }}">
           </div>
-          <div class="card-info">
+          <div>
             <p>{{ recipe.title }}</p>
             <small>por {{ recipe.chef_name }}</small>
           </div>

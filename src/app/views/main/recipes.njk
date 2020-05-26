@@ -1,4 +1,4 @@
-{% extends 'main/layout.njk' %}
+{% extends '_layouts/main.njk' %}
 
 {% block head %}
   <title>Receitas</title>
@@ -6,36 +6,22 @@
 
 {% block content %}
 
-  <main class="container">
-    <div class="cards recipes">
+  <section class="container">
+    <div class="grid grid--recipes">
 
       {% for recipe in recipes %}
-
-        <div class="card" data-id="{{ loop.index }}">
-          <img src="{{ recipe.avatar_url }}" alt="{{ recipe.name }}">
-          <div class="card-info">
-            <h4>{{ recipe.name }}</h4>
-            <p>by {{ recipe.author}}</p>
+        <a href="/recipes/{{ recipe.id }}" class="grid__item--recipes">
+          <div class="grid__image--recipes">
+            <img src="{{ recipe.image }}" alt="{{ recipe.title }}">
           </div>
-        </div>
-
-      {% endfor %}
-
-      {% for recipe in recipes %}
-
-        <div class="card" data-id="{{ loop.index }}">
-          <img src="{{ recipe.avatar_url }}" alt="{{ recipe.name }}">
-          <div class="card-info">
-            <h4>{{ recipe.name }}</h4>
-            <p>por {{ recipe.author}}</p>
+          <div>
+            <p>{{ recipe.title }}</p>
+            <small>por {{ recipe.chef_name }}</small>
           </div>
-        </div>
-
+        </a>
       {% endfor %}
 
     </div>
-  </main>
-
-  <script src="/script.js"></script>
+  </section>
 
 {% endblock content %}

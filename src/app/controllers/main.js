@@ -14,7 +14,9 @@ module.exports = {
     res.render('main/about');
   },
   recipes(req, res) {
-    res.render('main/recipes', { recipes: data.recipes });
+    Recipe.all(function(recipes) {
+      res.render('main/recipes', { recipes });
+    });
   },
   recipe(req, res) {
     const id = req.params.id;
