@@ -60,7 +60,7 @@ if (document.querySelector(".add-ingredient") && document.querySelector(".add-st
 }
 
 // Style current header link
-const $navLinks = document.querySelectorAll('.link__header');
+const $navLinks = document.querySelectorAll('.menu__row a');
 
 function styleActiveNav($navLinks) {
   const path = location.pathname;
