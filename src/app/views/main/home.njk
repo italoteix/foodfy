@@ -13,21 +13,7 @@
   <section class="container">
     <h2 class="title">Mais acessadas</h2>
 
-    <div class="grid grid--recipes">
-
-      {% for recipe in recipes %}
-        <a href="/recipes/{{ recipe.id }}" class="grid__item--recipes">
-          <div class="grid__image--recipes">
-            <img src="{{ recipe.image }}" alt="{{ recipe.title }}">
-          </div>
-          <div>
-            <p>{{ recipe.title }}</p>
-            <small>por {{ recipe.chef_name }}</small>
-          </div>
-        </a>
-      {% endfor %}
-
-    </div>
+    {% include '_components/recipesGridx3.njk' %}
   </section>
 
 {% endblock content %}

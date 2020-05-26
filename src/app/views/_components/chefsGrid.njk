@@ -1,0 +1,11 @@
+<div class="grid grid--chefs">
+  {% for chef in chefs %}
+    <div class="grid__item--chefs">
+      <img src={{chef.avatar_url}} alt={{chef.name}}>
+      <div class="grid__info--chefs">
+        <p>{{ chef.name }}</p>
+        <small>{{ chef.recipes_count }} receita{% if chef.recipes_count > 0 %}s{% endif %}</small>
+      </div>
+    </div>
+  {% endfor %}
+</div>
