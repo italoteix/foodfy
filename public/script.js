@@ -1,6 +1,5 @@
-// Acordeon buttons
-const cards = document.querySelectorAll('.card');
-const expandButtons = document.querySelectorAll('.expand-button');
+// Acordion buttons
+const $acordionTrigger = document.querySelectorAll('.acordion__toggle');
 
 function changeButtonText(button) {
   if (button.classList.contains('hide')) {
@@ -10,28 +9,19 @@ function changeButtonText(button) {
   }
 }
 
-function setAcordeonButtons(cards, expandButtons) {
-  for (let card of cards) {
-    card.addEventListener('click', function() {
-      const id = card.getAttribute('data-id');
-  
-      window.location.href = `/recipes/${id - 1}`;
-    })
-  }
-  
-  for (let button of expandButtons) {
+function setAcordionButtons(buttons) {
+  for (let button of buttons) {
     button.addEventListener('click', function() {
-      const id = button.getAttribute('data-js');
-      button.va
+      const block = button.dataset.block;
   
       button.classList.toggle('hide');
-      document.querySelector(`#${id}`).classList.toggle('hide');
+      document.querySelector(`.${block}`).classList.toggle('hide');
       changeButtonText(button);
     });
   }
 }
 
-if (cards && expandButtons) setAcordeonButtons(cards, expandButtons);
+if ($acordionTrigger) setAcordionButtons($acordionTrigger);
 
 // Add input fields on button click
 function addField(clonesClass) {

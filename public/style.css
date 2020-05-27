@@ -149,6 +149,70 @@ footer small {
   margin-bottom: 30px;
 }
 
+/*=== MAIN.RECIPE ===*/
+.banner {
+  border-radius: 15px;
+  overflow: hidden;
+  margin-bottom: 50px;
+}
+
+.banner img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.header__recipe {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.header__recipe h1 {
+  font-size: 36px;
+  line-height: 42px;
+  margin-bottom: 4px;
+}
+
+.header__recipe p {
+  font-size: 20px;
+  line-height: 24px;
+  color: var(--color-text-secondary);
+}
+
+.acordion .title {
+  margin-bottom: 20px;
+}
+
+.acordion__toggle {
+  font-size: 12px;
+  line-height: 14px;
+  color: #999;
+  text-transform: uppercase;
+
+  margin-left: 8px;
+  cursor: pointer;
+}
+
+.acordion__toggle:hover {
+  opacity: 0.7;
+}
+
+.acordion__body {
+  font-size: 18px;
+  line-height: 28px;
+  color: #444;
+
+  margin-bottom: 50px;
+}
+
+.acordion__body.hide {
+  display: none;
+}
+
+ul.acordion__body {
+  list-style: disc;
+  padding-inline-start: 1em;
+}
+
 /*=== RECIPES ===*/
 .grid {
   display: grid;

@@ -19,9 +19,14 @@ module.exports = {
     });
   },
   recipe(req, res) {
-    const id = req.params.id;
-  
-    res.render('main/recipe', { recipe: data.recipes[id] })
+    Recipe.find(req.params.id, function(recipe) {
+      if (!recipe) return res.send('Recipe not found!');
+
+      if (recipe.information)
+        recipe.information = recipe.information.replace(/\\n/gi, '<br >');
+
+      return res.render('main/recipe', { recipe });
+    });
   },
   chefs(req, res) {
     Chef.all(function(chefs) {
