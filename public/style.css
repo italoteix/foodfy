@@ -213,6 +213,50 @@ ul.acordion__body {
   padding-inline-start: 1em;
 }
 
+/*=== ADMIN ===*/
+/*=== ADMIN.LAYOUT ===*/
+.header--admin + main {
+  padding-top: 50px;
+}
+
+/*=== ADMIN.LAYOUT.HEADER ===*/
+.header--admin {
+  background-color: var(--color-text-primary);
+}
+
+.header__link--admin {
+  font-size: 15px;
+  line-height: 18px;
+  font-weight: bold;
+  color: #999;
+  text-transform: uppercase;
+}
+
+.header__link--admin.active {
+  color: #fff;
+}
+
+/*=== ADMIN.CHEFS ===*/
+/*=== ADMIN.CHEFS.INDEX ===*/
+.title__row {
+  display: flex;
+  justify-content: space-between;
+
+  margin-bottom: 30px;
+}
+
+.button--primary {
+  background-color: #6558C3;
+  padding: 9px 20px;
+  border-radius: 4px;
+
+  color: #fff;
+  font-size: 16px;
+  line-height: 18px;
+  font-weight: bold;
+}
+
+
 /*=== RECIPES ===*/
 .grid {
   display: grid;

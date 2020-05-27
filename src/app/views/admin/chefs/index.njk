@@ -1,22 +1,16 @@
-{% extends '_layout/admin.njk' %}
+{% extends '_layouts/admin.njk' %}
 
 {% block content %}
-  <section class="wrapper admin">
-    <div class="title">
-      <h1>Gerenciar chefs</h1>
-      <button class="primary-button">
-        <a href="/admin/chefs/create">Novo</a>
-      </button>
+  <section class="container">
+    <div class="title__row">
+      <h1 class="title">Gerenciar chefs</h1>
+      <a href="/admin/chefs/create">
+        <button class="button--primary">
+          Novo
+        </button>
+      </a>
     </div>
 
-    <div class="chefs">
-      {% for chef in chefs %}
-        <div class="chef">
-          <img src={{chef.avatar_url}} alt={{chef.name}}>
-          <p>{{ chef.name }}</p>
-          <a href="/admin/chefs/{{ chef.id }}">Visualizar</a>
-        </div>
-      {% endfor %}
-    </div>
+    {% include '_components/chefsGrid.njk' %}
   </section>
 {% endblock content %}
