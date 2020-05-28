@@ -27,8 +27,10 @@ ul {
   padding-inline-start: 0;
 }
 
-a {
+a,
+button {
   text-decoration: none;
+  cursor: pointer;
 }
 
 .container {
@@ -245,22 +247,56 @@ ul.acordion__body {
   margin-bottom: 30px;
 }
 
-.button--primary {
-  background-color: #6558C3;
+.button {
   padding: 9px 20px;
   border-radius: 4px;
-
+  
   color: #fff;
   font-size: 16px;
   line-height: 18px;
   font-weight: bold;
 }
 
+.button--primary {
+  background-color: #6558C3;
+}
+
+/*=== ADMIN.CHEFS.SHOW ===*/
+.header--chef {
+  text-align: center;
+}
+
+.header--chef img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 30px;
+}
+
+.header--chef h2 {
+  font-size: 36px;
+  line-height: 42px;
+  margin-bottom: 4px;
+}
+
+.header--chef p {
+  font-size: 20px;
+  line-height: 24px;
+  color: var(--color-text-secondary);
+}
+
+
+/*=== ADMIN.CHEFS.EDIT ===*/
+.button--delete {
+  background-color: #DC4747;
+  margin: 0 10px 0 auto;
+}
 
 /*=== RECIPES ===*/
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 30px 20px;
 }
 
@@ -289,9 +325,49 @@ ul.acordion__body {
   margin-left: -30%;
 }
 
+/*=== RECIPES x2 ===*/
+.grid--recipes-x2 {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  gap: 20px 30px;
+}
+
+.grid__item--recipes-x2 {
+  display: grid;
+  grid-template-columns: 40% 60%;
+  grid-template-rows: 80px;
+  gap: 20px;
+}
+
+.grid__image--recipes-x2 {
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.grid__image--recipes-x2 img {
+  height: 100%;
+  object-fit: cover;
+}
+
+.grid__content--recipes-x2 p {
+  margin-bottom: 5px;
+}
+
+.grid__content--recipes-x2 a {
+  margin-top: 10px;
+}
+
+.view-link {
+  display: block;
+  color: #6558C3;
+  font-size: 14px;
+  line-height: 16px;
+  font-weight: bold;
+}
+
 /*=== CHEFS ===*/
 .grid--chefs {
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
 }
 
 .grid__item--chefs {
@@ -306,4 +382,24 @@ ul.acordion__body {
   height: 64px;
   border-radius: 50%;
   object-fit: cover;
+}
+
+/*=== FORM ===*/
+form {
+  font-size: 16px;
+  line-height: 19px;
+}
+
+.form__label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.form__input {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 15px 20px;
+  margin-bottom: 30px;
+  width: 100%;
 }
