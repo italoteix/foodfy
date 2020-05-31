@@ -1,14 +1,14 @@
-{% extends 'admin/layout.njk' %}
+{% extends '_layouts/admin.njk' %}
 
 {% block content %}
-  <form class="wrapper" action="/admin/recipes?_method=PUT" method="post">
-    <div class="form-item">
-      <h1>Criando receita</h1>
-      <input type="submit" value="Deletar" form="form-delete" id="button-delete">
-      <input type="submit" value="Salvar receita">
+  <form class="container" action="/admin/recipes?_method=PUT" method="post">
+    <div class="title__row">
+      <h1 class="title">Criando receita</h1>
+      <input class="button button--delete" type="submit" value="Deletar" form="form-delete" id="button-delete">
+      <input class="button button--primary" type="submit" value="Salvar receita">
     </div>
 
-    {% include 'admin/recipes/fields.njk' %}
+    {% include '_components/fieldsRecipes.njk' %}
 
     <input type="hidden" name="id" value="{{ recipe.id }}">
 

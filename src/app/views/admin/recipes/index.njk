@@ -1,27 +1,17 @@
-{% extends 'admin/layout.njk' %}
+{% extends '_layouts/admin.njk' %}
 
 {% block content %}
-  <section class="wrapper admin">
-    <div class="title">
-      <h1>Gerenciar receitas</h1>
-      <button class="primary-button">
-        <a href="/admin/recipes/create">Novo</a>
-      </button>
+  <section class="container">
+      <div class="title__row">
+      <h1 class="title">Gerenciar receitas</h1>
+      <a href="/admin/recipes/create">
+        <button class="button button--primary">
+          Novo
+        </button>
+      </a>
     </div>
 
-    <div class="recipes">
-      {% for recipe in recipes %}
-        <div class="recipe">
-          <div class="img-wrapper">
-            <img src="{{ recipe.image }}" alt="{{ recipe.title }}">
-          </div>
-          <div class="content-wrapper">
-            <h3>{{ recipe.title }}</h3>
-            <p>por {{ recipe.chef_name }}</p>
-            <a href="/admin/recipes/{{ recipe.id }}">Visualizar</a>
-          </div>
-        </div>
-      {% endfor %}
-    </div>
+    {% include '_components/recipesGridx2.njk' %}
+
   </section>
 {% endblock content %}

@@ -293,6 +293,22 @@ ul.acordion__body {
   margin: 0 10px 0 auto;
 }
 
+/*=== ADMIN.RECIPES ===*/
+/*=== ADMIN.RECIPES.SHOW ===*/
+ul.acordion__body--dash {
+  list-style: none;
+  padding-inline-start: 0;
+}
+
+ul.acordion__body--dash li:before {
+  content: '- ';
+}
+
+/*=== ADMIN.RECIPES.EDIT ===*/
+select.form__input:invalid {
+  color: #999;
+}
+
 /*=== RECIPES ===*/
 .grid {
   display: grid;
@@ -402,4 +418,25 @@ form {
   padding: 15px 20px;
   margin-bottom: 30px;
   width: 100%;
+}
+
+.form__input--ingredient,
+.form__input--preparation {
+  margin-bottom: 15px;
+}
+
+.add-field {
+  padding: 0;
+  background-color: unset;
+  margin-bottom: 30px;
+}
+
+input[type="submit"] {
+  cursor: pointer;
+}
+
+input[type="submit"]:hover,
+.add-field:hover  {
+  opacity: 0.8;
+  transition: opacity 300ms;
 }

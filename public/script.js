@@ -24,29 +24,31 @@ function setAcordionButtons(buttons) {
 if ($acordionTrigger) setAcordionButtons($acordionTrigger);
 
 // Add input fields on button click
-function addField(clonesClass) {
-  const inputs = document.querySelectorAll(clonesClass);
-  const lastInput = inputs[inputs.length - 1];
-
-  // Do not add a new field if the last one is empty
-  if (lastInput.value == "") return false;
-
-  // Clones the last input field
-  const newField = lastInput.cloneNode(true);
-
-  // Clear the new input
-  newField.value = "";
-  inputs[inputs.length - 1].after(newField);
+const $addFieldBruttons = document.querySelectorAll('.add-field');
+if ($addFieldBruttons) {
+  addListenerToFieldButton($addFieldBruttons);
 }
 
-if (document.querySelector(".add-ingredient") && document.querySelector(".add-step")) {
-  document
-    .querySelector(".add-ingredient")
-    .addEventListener("click", function() { addField('.ingredient') });
-  
-  document
-    .querySelector(".add-step")
-    .addEventListener("click", function() { addField('.step') });
+function addListenerToFieldButton(buttons) {
+  for (let button of buttons) {
+    const field = button.dataset.field;
+    button.addEventListener('click', function() { addField(field) });
+  }
+}
+
+function addField(clonesClass) {
+  const $inputs = document.querySelectorAll(`.form__input--${clonesClass}`);
+  const $lastInput = $inputs[$inputs.length - 1];
+
+  // Do not add a new field if the last one is empty
+  if ($lastInput.value == "") return false;
+
+  // Clones the last input field
+  const $newField = $lastInput.cloneNode(true);
+
+  // Clear the new input
+  $newField.value = "";
+  $inputs[$inputs.length - 1].after($newField);
 }
 
 // Style current header link

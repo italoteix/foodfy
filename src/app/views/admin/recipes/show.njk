@@ -1,44 +1,48 @@
-{% extends 'admin/layout.njk' %}
+{% extends '_layouts/admin.njk' %}
 
 {% block content %}
-<div class="wrapper recipe admin">
-  <div class="title">
-    <h1>Receita: {{ recipe.title }}</h1>
-    <button class="primary-button" type="button" >
-      <a href="/admin/recipes/{{ recipe.id }}/edit">Editar receita</a>
-    </button>
-  </div>
+  <section class="title__row container">
+    <h1 class="title">Receita: {{ recipe.title }}</h1>
+    <a href="/admin/recipes/{{ recipe.id }}/edit">
+      <button class="button button--primary">
+        Editar receita
+      </button>
+    </a>
+  </section>
 
-  <div class="banner">
+  <section class="container banner">
     <img src="{{ recipe.image }}" alt="{{ recipe.title }}">
-  </div>
-  <h1>{{ recipe.title }}</h1>
-  <p>por {{ recipe.chef_name }}</p>
+  </section>
 
-  <section class="recipe-section">
-    <h2>Ingredientes</h2>
+  <section class="header__recipe">
+    <h1>{{ recipe.title }}</h1>
+    <p>por {{ recipe.chef_name }}</p>
+  </section>
 
-    <ul id="ingredients">
+  <section class="acordion container">
+    <h2 class="title">Ingredientes</h2>
+
+    <ul class="acordion__body acordion__body--ingredients acordion__body--dash">
       {% for ingredient in recipe.ingredients %}
-        <li> {{ ingredient }}</li>
+        <li>{{ ingredient }}</li>
       {% endfor %}
     </ul>
   </section>
 
-  <section class="recipe-section">
-    <h2>Modo de preparo</h2>
+  <section class="acordion container">
+    <h2 class="title">Modo de preparo</h2>
 
-    <ul id="directions">
+    <ul class="acordion__body acordion__body--preparation acordion__body--dash">
       {% for item in recipe.preparation %}
-        <li> {{ item }}</li>
+        <li>{{ item }}</li>
       {% endfor %}
     </ul>
   </section>
 
-  <section class="recipe-section">
-    <h2>Informações adicionais</h2>
+  <section class="acordion container">
+    <h2 class="title">Informações adicionais</h2>
 
-    <p id="note">{{ recipe.information }}</p>
+    <p class="acordion__body acordion__body--information">{{ recipe.information  }}</p>
   </section>
-</div>
+
 {% endblock content %}

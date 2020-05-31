@@ -1,0 +1,34 @@
+<label class="form__label" for="title">Nome do prato</label>
+<input class="form__input" type="text" name="title" id="title" value="{{ recipe.title }}">
+
+<label class="form__label" for="chef_id">Chef</label>
+<select class="form__input" name="chef_id" id="chef_id" required>
+  {% if not recipe.chef_id %}
+    <option value="" selected disabled hidden>Selecione um chef</option>
+  {% endif %}
+  {% for chef in chefOptions %}
+    <option value={{chef.id}} {% if chef.id == recipe.chef_id %}selected{% endif %}>{{ chef.name }}</option>
+  {% endfor %}
+</select>
+
+<label class="form__label" for="image">Imagem da receita</label>
+<input class="form__input" type="url" name="image" id="image" value="{{ recipe.image }}">
+
+<label class="form__label" for="ingredients">Ingredientes</label>
+{% for ingredient in recipe.ingredients %}
+  <input class="form__input form__input--ingredient" type="text" name="ingredients[]" id="ingredients" value="{{ recipe.ingredients[loop.index - 1] }}">
+{% else %}
+  <input class="form__input form__input--ingredient" type="text" name="ingredients[]">
+{% endfor %}
+<button type="button" class="view-link add-field" data-field="ingredient">Adicionar novo ingrediente</button>
+
+<label class="form__label" for="preparation">Modo de preparo</label>
+{% for step in recipe.preparation %}
+  <input class="form__input form__input--preparation" type="text" name="preparation[]" value="{{ recipe.preparation[loop.index - 1] }}">
+{% else %}
+  <input class="form__input form__input--preparation" type="text" name="preparation[]">
+{% endfor %}
+<button type="button" class="view-link add-field" data-field="preparation">Adicionar novo passo</button>
+
+<label class="form__label" for="information">Informações adicionais</label>
+<textarea class="form__input" name="information" id="information" rows="10" >{{ recipe.information }}</textarea>

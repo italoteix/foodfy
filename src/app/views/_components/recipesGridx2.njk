@@ -6,7 +6,9 @@
       </div>
       <div class="grid__content--recipes-x2">
         <p>{{ recipe.title }}</p>
-        <small>por {{ chef.name }}</small>
+        <small>
+          por {% if recipe.chef_name %}{{ recipe.chef_name }}{% else %}{{ chef.name }}{% endif %}
+        </small>
         <a class="view-link" href="/admin/recipes/{{ recipe.id }}">Visualizar</a>
       </div>
     </div>
