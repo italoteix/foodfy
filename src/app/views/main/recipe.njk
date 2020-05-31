@@ -1,0 +1,45 @@
+{% extends '_layouts/main.njk' %}
+
+{% block head %}
+  <title>{{ recipe.name }}</title>
+{% endblock head %}
+
+{% block content %}
+
+  <section class="container banner">
+    <img src="{{ recipe.image }}" alt="{{ recipe.title }}">
+  </section>
+
+  <section class="header__recipe">
+    <h1>{{ recipe.title }}</h1>
+    <p>por {{ recipe.chef_name }}</p>
+  </section>
+
+  <section class="acordion container">
+    <h2 class="title">Ingredientes<span class="acordion__toggle" data-block="acordion__body--ingredients">esconder</span></h2>
+
+    <ul class="acordion__body acordion__body--ingredients">
+      {% for ingredient in recipe.ingredients %}
+        <li>{{ ingredient }}</li>
+      {% endfor %}
+    </ul>
+  </section>
+
+  <section class="acordion container">
+    <h2 class="title">Modo de preparo<span class="acordion__toggle" data-block="acordion__body--preparation">esconder</span></h2>
+
+    <ul class="acordion__body acordion__body--preparation">
+      {% for item in recipe.preparation %}
+        <li>{{ item }}</li>
+      {% endfor %}
+    </ul>
+  </section>
+
+  <section class="acordion container">
+    <h2 class="title">Informações adicionais<span class="acordion__toggle" data-block="acordion__body--information">esconder</span></h2>
+
+    <p class="acordion__body acordion__body--information">{{ recipe.information  }}</p>
+  </section>
+
+{% endblock content %}
+

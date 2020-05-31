@@ -1,4 +1,4 @@
-{% extends 'layout.njk' %}
+{% extends '_layouts/main.njk' %}
 
 {% block head %}
   <title>About</title>
@@ -6,9 +6,10 @@
 
 {% block content %}
 
-  <main>
-    <div class="about container">
-      <h1>Sobre o Foodfy</h1>
+  <section class="about container">
+    <h1 class="title">Sobre o Foodfy</h1>
+
+    <article>
       <p>
         Suspendisse placerat neque neque. Morbi dictum nulla non sapien rhoncus, et mattis erat commodo. Aliquam vel 
         lacus a justo mollis luctus. Proin vel auctor eros, sed eleifend nunc. Curabitur eget tincidunt risus. Mauris 
@@ -22,7 +23,9 @@
         ligula. Morbi cursus facilisis feugiat. Praesent euismod nec nisl at accumsan. Donec libero neque, vulputate semper orci et, 
         malesuada sodales eros. Nunc ut nulla faucibus enim ultricies euismod.
       </p>
-
+    </article>
+    
+    <article>
       <h2>Como tudo começou...</h2>
       <p>
         Suspendisse placerat neque neque. Morbi dictum nulla non sapien rhoncus, et mattis erat commodo. Aliquam vel 
@@ -37,7 +40,9 @@
         arcu, et posuere ligula. Morbi cursus facilisis feugiat. Praesent euismod nec nisl at accumsan. Donec libero neque, 
         vulputate semper orci et, malesuada sodales eros. Nunc ut nulla faucibus enim ultricies euismod.
       </p>
+    </article>
 
+    <article>
       <h2>Nossas receitas</h2>
       <p>
         Fusce nec pulvinar nunc. Duis porttitor tincidunt accumsan. Quisque pulvinar mollis ipsum ut accumsan. Proin ligula lectus, 
@@ -45,7 +50,7 @@
         posuere ligula. Morbi cursus facilisis feugiat. Praesent euismod nec nisl at accumsan. Donec libero neque, vulputate semper 
         orci et, malesuada sodales eros. Nunc ut nulla faucibus enim ultricies euismod.
       </p>
-    </div>
-  </main>
+    </article>
+  </section>
 
 {% endblock content %}

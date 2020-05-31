@@ -1,0 +1,16 @@
+<div class="grid--recipes-x2">
+  {% for recipe in recipes %}
+    <div class="grid__item--recipes-x2">
+      <div class="grid__image--recipes-x2">
+        <img src="{{ recipe.image }}" alt="{{ recipe.title }}">
+      </div>
+      <div class="grid__content--recipes-x2">
+        <p>{{ recipe.title }}</p>
+        <small>
+          por {% if recipe.chef_name %}{{ recipe.chef_name }}{% else %}{{ chef.name }}{% endif %}
+        </small>
+        <a class="view-link" href="/admin/recipes/{{ recipe.id }}">Visualizar</a>
+      </div>
+    </div>
+  {% endfor %}
+</div>

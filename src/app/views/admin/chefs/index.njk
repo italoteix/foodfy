@@ -1,0 +1,16 @@
+{% extends '_layouts/admin.njk' %}
+
+{% block content %}
+  <section class="container">
+    <div class="title__row">
+      <h1 class="title">Gerenciar chefs</h1>
+      <a href="/admin/chefs/create">
+        <button class="button button--primary">
+          Novo
+        </button>
+      </a>
+    </div>
+
+    {% include '_components/chefsGrid.njk' %}
+  </section>
+{% endblock content %}

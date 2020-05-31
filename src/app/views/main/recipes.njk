@@ -1,0 +1,19 @@
+{% extends '_layouts/main.njk' %}
+
+{% block head %}
+  <title>Receitas</title>
+{% endblock head %}
+
+{% block content %}
+
+  <section class="container">
+    {% include '_components/recipesGridx3.njk' %}
+  </section>
+
+  <section
+    class="pagination container"
+    data-page={{pagination.page}}
+    data-total={{pagination.total}}
+  ></section>
+
+{% endblock content %}

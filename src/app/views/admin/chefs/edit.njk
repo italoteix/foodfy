@@ -1,0 +1,32 @@
+{% extends '_layouts/admin.njk' %}
+
+{% block content %}
+  <form class="container" action="/admin/chefs?_method=PUT" method="post">
+    <div class="title__row">
+      <h1 class="title">Editando chef</h1>
+      <input class="button button--delete" type="submit" value="Deletar" form="form-delete" id="button-delete">
+      <input class="button button--primary" type="submit" value="Salvar chef">
+    </div>
+
+    {% include '_components/fieldsChefs.njk' %}
+
+    <input type="hidden" name="id" value={{chef.id}}>
+
+  </form>
+
+  <form action="/admin/chefs?_method=DELETE" method="post" id="form-delete">
+    <input type="hidden" name="id" value="{{ chef.id }}" data-recipes={{chef.recipes_count}}>
+  </form>
+
+<script>
+  const formDelete = document.querySelector('#form-delete');
+  formDelete.addEventListener('submit', function(event) {
+    const recipesCount = document.querySelector('#form-delete input').dataset.recipes;
+
+    if (recipesCount > 0) {
+      alert('Chefs com receitas cadastradas não podem ser deletados!');
+      event.preventDefault();
+    }
+  });
+</script>
+{% endblock content %}

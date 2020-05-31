@@ -1,0 +1,17 @@
+{% extends '_layouts/admin.njk' %}
+
+{% block content %}
+  <section class="container">
+      <div class="title__row">
+      <h1 class="title">Gerenciar receitas</h1>
+      <a href="/admin/recipes/create">
+        <button class="button button--primary">
+          Novo
+        </button>
+      </a>
+    </div>
+
+    {% include '_components/recipesGridx2.njk' %}
+
+  </section>
+{% endblock content %}

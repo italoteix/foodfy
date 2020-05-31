@@ -1,0 +1,26 @@
+{% extends '_layouts/main.njk' %}
+
+{% block headerRight %}
+  <form class="form--search" action="/results" method="get">
+    <input class="form__input form__input--search" placeholder="Buscar uma receita" type="search" name="search">
+    <input class="button button--primary" type="submit" value="Buscar">
+  </form>
+{% endblock headerRight %}
+
+{% block content %}
+
+  <section class="hero container">
+    <article class="hero__content">
+      <h1>As melhores receitas</h1>
+      <p>Aprenda a construir os melhores pratos com receitas criadas por profissionais do mundo inteiro.</p>
+    </article>
+    <img src="/assets/chef.png" alt="chef">
+  </section>
+
+  <section class="container">
+    <h2 class="title">Mais acessadas</h2>
+
+    {% include '_components/recipesGridx3.njk' %}
+  </section>
+
+{% endblock content %}
