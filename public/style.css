@@ -420,6 +420,10 @@ form {
   width: 100%;
 }
 
+.form__input::placeholder {
+  color: #999;
+}
+
 .form__input--ingredient,
 .form__input--preparation {
   margin-bottom: 15px;
@@ -439,4 +443,27 @@ input[type="submit"]:hover,
 .add-field:hover  {
   opacity: 0.8;
   transition: opacity 300ms;
+}
+
+/*=== FORM.SEARCH ===*/
+.form--search {
+  display: flex;
+  margin-left: auto;
+}
+
+.form__input--search {
+  margin-bottom: 0;
+  margin-right: 8px;
+  padding: 10px 15px;
+}
+
+/*=== PAGINATION ===*/
+.pagination {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+}
+
+.pagination a + a {
+  margin-left: 16px;
 }

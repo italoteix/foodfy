@@ -1,5 +1,12 @@
 {% extends '_layouts/main.njk' %}
 
+{% block headerRight %}
+  <form class="form--search" action="/results" method="get">
+    <input class="form__input form__input--search" placeholder="Buscar uma receita" type="search" name="search">
+    <input class="button button--primary" type="submit" value="Buscar">
+  </form>
+{% endblock headerRight %}
+
 {% block content %}
 
   <section class="hero container">

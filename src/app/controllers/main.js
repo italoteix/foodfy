@@ -14,8 +14,20 @@ module.exports = {
     res.render('main/about');
   },
   recipes(req, res) {
-    Recipe.all(function(recipes) {
-      res.render('main/recipes', { recipes });
+    let { limit, page } = req.query;
+
+    limit = limit || 3;
+    page = page || 1;
+
+    const offset = limit * (page - 1);
+
+    Recipe.pagination(limit, offset, function(recipes) {
+      const pagination = {
+        total: Math.ceil(recipes[0].total / limit),
+        page
+      };
+
+      res.render('main/recipes', { recipes, pagination });
     });
   },
   recipe(req, res) {
@@ -31,6 +43,13 @@ module.exports = {
   chefs(req, res) {
     Chef.all(function(chefs) {
       return res.render('main/chefs', { chefs });
+    });
+  },
+  results(req, res) {
+    const { search } = req.query;
+
+    Recipe.findBy(search, function(recipes) {
+      return res.render('main/results', { search, recipes });
     });
   }
 };

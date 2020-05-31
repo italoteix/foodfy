@@ -1,0 +1,16 @@
+{% extends '_layouts/main.njk' %}
+
+{% block headerRight %}
+  <form class="form--search" action="/results" method="get">
+    <input class="form__input form__input--search" placeholder="Buscar uma receita" type="search" name="search" value={{search}}>
+    <input class="button button--primary" type="submit" value="Buscar">
+  </form>
+{% endblock headerRight %}
+
+{% block content %}
+  <section class="container">
+    <h1 class="title">Buscando por "{{ search }}"</h1>
+
+    {% include '_components/recipesGridx3.njk' %}
+  </section>
+{% endblock content %}

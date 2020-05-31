@@ -10,4 +10,10 @@
     {% include '_components/recipesGridx3.njk' %}
   </section>
 
+  <section
+    class="pagination container"
+    data-page={{pagination.page}}
+    data-total={{pagination.total}}
+  ></section>
+
 {% endblock content %}
