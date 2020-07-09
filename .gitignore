@@ -19,3 +19,6 @@ node_modules/
 # Temporary folders
 tmp/
 temp/
+
+# Stored Assets
+public/images/
