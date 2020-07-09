@@ -2,4 +2,18 @@
 <input class="form__input" type="text" name="name" id="name" value="{{ chef.name }}">
 
 <label class="form__label" for="avatar_url">Avatar</label>
-<input class="form__input" type="url" name="avatar_url" id="avatar_url" value="{{ chef.avatar_url }}">
+<p
+  class="form__input form__input--avatar {% if not chef.avatar_url %}hidden{% else %}none{% endif %}"
+>
+  {{ chef.avatar_url }}
+</p>
+<div id="photos-upload--chefs">
+  <input
+    type="file"
+    name="file"
+    id="photos__input--chef"
+    accept="image/*"
+    onchange="ChefAvatarUpload.handleFileInput()"
+  >
+  <button class="button button--primary" type="button">Enviar Avatar</button>
+</div>

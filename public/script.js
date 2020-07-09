@@ -117,3 +117,16 @@ function createPagination(pagination) {
 const pagination = document.querySelector('.pagination');
 
 if (pagination) createPagination(pagination);
+
+// Chefs Avatar upload
+const ChefAvatarUpload = {
+  fileInput: document.querySelector('#photos__input--chef'),
+  urlInput: document.querySelector('.form__input--avatar'),
+  showUrlInput() {
+    this.urlInput.classList.remove('hidden');
+  },
+  handleFileInput() {
+    this.showUrlInput();
+    this.urlInput.textContent = this.fileInput.files[0].name;
+  }
+};

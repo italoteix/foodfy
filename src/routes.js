@@ -3,6 +3,7 @@ const express = require('express');
 const main = require('./app/controllers/main');
 const recipes = require('./app/controllers/recipes');
 const chefs = require('./app/controllers/chefs');
+const multer = require('./app/middlewares/multer');
 
 const routes = express.Router();
 
@@ -31,8 +32,8 @@ routes.get('/admin/chefs/create', chefs.create); // Show new chef form
 routes.get('/admin/chefs/:id', chefs.show); // Show shef's profile
 routes.get('/admin/chefs/:id/edit', chefs.edit); // Show chef's edit form
 
-routes.post('/admin/chefs', chefs.post); // Add new chef
-routes.put('/admin/chefs', chefs.put); // Edit chef profile
+routes.post('/admin/chefs', multer.array('file', 1), chefs.post); // Add new chef
+routes.put('/admin/chefs', multer.array('file', 1), chefs.put); // Edit chef profile
 routes.delete('/admin/chefs', chefs.delete); // Delete chef
 
 module.exports = routes;

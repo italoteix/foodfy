@@ -1,4 +1,3 @@
-const data = require('../../../data.json');
 const Chef = require('../models/Chef');
 const Recipe = require('../models/Recipe');
 
