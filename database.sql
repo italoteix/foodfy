@@ -20,7 +20,6 @@ CREATE TABLE "chefs" (
 CREATE TABLE "recipes" (
   "id" SERIAL PRIMARY KEY,
   "chef_id" int NOT NULL REFERENCES chefs(id),
-  "iamge" text,
   "title" text,
   "ingredients" text[],
   "preparation" text[],
