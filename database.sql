@@ -4,12 +4,6 @@ CREATE TABLE "files" (
   "path" text NOT NULL
 );
 
-CREATE TABLE "recipe_files" (
-  "id" SERIAL PRIMARY KEY,
-  "recipe_id" int REFERENCES recipes(id),
-  "file_id" int REFERENCES files(id)
-);
-
 CREATE TABLE "chefs" (
   "id" SERIAL PRIMARY KEY,
   "name" text,
@@ -25,4 +19,10 @@ CREATE TABLE "recipes" (
   "preparation" text[],
   "information" text,
   "created_at" timestamp DEFAULT (now())
+);
+
+CREATE TABLE "recipe_files" (
+  "id" SERIAL PRIMARY KEY,
+  "recipe_id" int REFERENCES recipes(id),
+  "file_id" int REFERENCES files(id)
 );
