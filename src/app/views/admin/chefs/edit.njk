@@ -1,7 +1,7 @@
 {% extends '_layouts/admin.njk' %}
 
 {% block content %}
-  <form class="container" action="/admin/chefs?_method=PUT" method="post">
+  <form class="container" action="/admin/chefs?_method=PUT" method="post" enctype="multipart/form-data">
     <div class="title__row">
       <h1 class="title">Editando chef</h1>
       <input class="button button--delete" type="submit" value="Deletar" form="form-delete" id="button-delete">

@@ -1,3 +1,29 @@
+<label class="form__label" for="files">Imagem da receita</label>
+<div id="photos-container">
+  <div class="photos-preview__item" id="photos-upload">
+    <i class="material-icons">add</i>
+    <input
+      type="file"
+      name="photos"
+      id="photos-upload__input"
+      multiple
+      accept="image/*"
+      onchange="PhotosUpload.handleFileInput(event)"
+    >
+  </div>
+  <div class="photos-preview">
+    {% if files %}
+      {% for photo in files %}
+        <div class="photos-preview__item" id="{{ photo.id }}">
+          <img src="{{ photo.url }}" alt="{{ photo.name }}">
+          <i class="material-icons" onclick="PhotosUpload.removeOldPhoto(event)">close</i>
+        </div>
+      {% endfor %}
+      <input type="hidden" name="removed_files">
+    {% endif %}
+  </div>
+</div>
+
 <label class="form__label" for="title">Nome do prato</label>
 <input class="form__input" type="text" name="title" id="title" value="{{ recipe.title }}">
 
@@ -10,9 +36,6 @@
     <option value={{chef.id}} {% if chef.id == recipe.chef_id %}selected{% endif %}>{{ chef.name }}</option>
   {% endfor %}
 </select>
-
-<label class="form__label" for="image">Imagem da receita</label>
-<input class="form__input" type="url" name="image" id="image" value="{{ recipe.image }}">
 
 <label class="form__label" for="ingredients">Ingredientes</label>
 {% for ingredient in recipe.ingredients %}

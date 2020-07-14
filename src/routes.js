@@ -22,8 +22,8 @@ routes.get("/admin/recipes/create", recipes.create); // Show new recipe form
 routes.get("/admin/recipes/:id", recipes.show); // Show recipe's detail
 routes.get("/admin/recipes/:id/edit", recipes.edit); // Show recipe's edit form
 
-routes.post("/admin/recipes", recipes.post); // Add new recipe
-routes.put("/admin/recipes", recipes.put); // Edit a recipe
+routes.post("/admin/recipes", multer.array('photos', 5), recipes.post); // Add new recipe
+routes.put("/admin/recipes", multer.array('photos', 5), recipes.put); // Edit a recipe
 routes.delete("/admin/recipes", recipes.delete); // Delete a recipe
 
 // // Chefs

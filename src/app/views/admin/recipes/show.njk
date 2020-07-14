@@ -10,8 +10,24 @@
     </a>
   </section>
 
-  <section class="container banner">
-    <img src="{{ recipe.image }}" alt="{{ recipe.title }}">
+  <section class="container">
+    <div class="banner">
+      <img src="{{ files[0].url }}" alt="{{ files[0].name }}">
+    </div>
+    <div class="gallery">
+      {% for photo in files %}
+        <div class="gallery__item photos-preview__item">
+          <img
+            src="{{ photo.url }}"
+            alt="{{ photo.name }}"
+            {% if loop.index0 == 0 %}
+              class="active"
+            {% endif %}
+            onclick="PhotoGallery.setBannerImage(event)"
+          >
+        </div>
+      {% endfor %}
+    </div>
   </section>
 
   <section class="header__recipe">
