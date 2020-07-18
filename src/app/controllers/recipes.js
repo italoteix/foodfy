@@ -3,10 +3,15 @@ const File = require('../models/File');
 const RecipeFile = require('../models/RecipeFile');
 
 module.exports = {
-  index(req, res) {
-    Recipe.all(function(recipes) {
+  async index(req, res) {
+    try {
+      let results = await Recipe.all();
+      const recipes = results.rows;
+
       return res.render('admin/recipes/index', { recipes });
-    });
+    } catch (err) {
+      return res.send(err);
+    }
   },
   async create(req, res) {
     try {

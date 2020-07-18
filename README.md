@@ -24,6 +24,7 @@
   <a href="#bulb-foodfys-admin">Foodfy's Admin</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#bulb-persisting-data-on-foodfy">Persisting data on Foodfy</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#bulb-upload-images-to-foodfy">Upload images to Foodfy</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#bulb-show-and-sort-foodfys-recipes">Show and Sort Foodfy's Recipes</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#gear-installing-and-running">Installing and Running</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#memo-license">License</a>
 </p>
@@ -77,6 +78,14 @@ The description of this part of challenge can be read [here](https://github.com/
 To see my code at this point of the challenge, go [here](https://github.com/italoteix/foodfy/tree/challenge-5).
 
 ## :bulb: Upload images to Foodfy
+
+The project now handles files input on front and back-end using multer.
+
+The description of this part of challenge can be read [here](https://github.com/Rocketseat/bootcamp-launchbase-desafios-07/blob/master/desafios/07-foodfy-envio-imagens.md).
+
+To see my code at this point of the challenge, go [here](https://github.com/italoteix/foodfy/tree/challenge-7).
+
+## :bulb: Show and Sort Foodfy's Recipes
 
 The project now handles files input on front and back-end using multer.
 
